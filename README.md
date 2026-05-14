@@ -6,7 +6,7 @@ Official repository for our ICPR 2026 paper on Consistent Scene Understanding in
 
 ### :triangular_flag_on_post: Updates
 * **2026.4.1**: 🎉Paper accepted at ICPR 2026🎉
-* **2026.05.14**: We released the [Environment Setting Notes](./docs/env_setting.md).
+* **2026.5.14**: We released the [Environment Setting Notes](./docs/env_setting.md).
 
 ## Pipeline
 <img width="1140" height="583" alt="Image" src="https://github.com/user-attachments/assets/60f62584-db15-4c0a-b9e3-73a22071aefa" />
