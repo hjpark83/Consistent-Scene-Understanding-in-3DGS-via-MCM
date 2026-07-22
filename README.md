@@ -2,7 +2,7 @@
 
 > **Hyunjoon Park**, and Donghyeon Cho
 
-### [Project Page](https://hjpark83.github.io/consisGS.github.io/) | [Paper](https://github.com/hjpark83/Consistent-Scene-Understanding-in-3DGS-via-MCM)
+### [Project Page](https://hjpark83.github.io/consisGS.github.io/) | [Paper](https://arxiv.org/abs/2607.01708)
 
 Official repository for our ICPR 2026 paper on Consistent Scene Understanding in reconstructed 3D space using Gaussian Splatting and 2D Segmentation Model.
 
