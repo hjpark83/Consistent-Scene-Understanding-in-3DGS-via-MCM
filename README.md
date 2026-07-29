@@ -35,7 +35,7 @@ You can refer to the [env_setting.md](./docs/env_setting.md) file to build envir
   CONFIG=config/pipeline/base.yaml
 ```
 
-#### Full-pipeline
+### Full-pipeline
 
 ```bash
 GPU_ID=${GPU} bash script/run_full_pipeline.sh \
@@ -47,7 +47,7 @@ GPU_ID=${GPU} bash script/run_full_pipeline.sh \
 <summary>Commands</summary>
 <div markdown="1">
 
-### 1. Precompute Depth Maps
+#### 1. Precompute Depth Maps
 
 ```bash
 CUDA_VISIBLE_DEVICES=${GPU} python script/precompute_depth_maps.py \
@@ -56,7 +56,7 @@ CUDA_VISIBLE_DEVICES=${GPU} python script/precompute_depth_maps.py \
     --device cuda
 ```
 
-### 2. MCM Feature-Field Segmentation
+#### 2. MCM Feature-Field Segmentation
 
 ```bash
 CUDA_VISIBLE_DEVICES=${GPU} python script/run_feature_field_segmentation.py \
@@ -67,7 +67,7 @@ CUDA_VISIBLE_DEVICES=${GPU} python script/run_feature_field_segmentation.py \
     --depth-cache-dir ${DEPTH_CACHE_DIR}
 ```
 
-### 3. Train 3DGS With Feature Field
+#### 3. Train 3DGS With Feature Field
 
 ```bash
 CUDA_VISIBLE_DEVICES=${GPU} python train.py \
@@ -78,7 +78,7 @@ CUDA_VISIBLE_DEVICES=${GPU} python train.py \
     --config_file ${CONFIG}
 ```
 
-### 4. Assign Global Mask IDs To Gaussians
+#### 4. Assign Global Mask IDs To Gaussians
 
 ```
 CUDA_VISIBLE_DEVICES=${GPU} python script/assign_mask_ids_to_point_cloud.py \
@@ -101,7 +101,7 @@ CUDA_VISIBLE_DEVICES=${GPU} python script/assign_mask_ids_to_point_cloud.py \
 --use_multiview_refinement
 ```
 
-### 5. Render Mask Refinement Visualization
+#### 5. Render Mask Refinement Visualization
 
 ```bash
 CUDA_VISIBLE_DEVICES=${GPU} python render/mask_refinement.py \
@@ -112,7 +112,7 @@ CUDA_VISIBLE_DEVICES=${GPU} python render/mask_refinement.py \
     --skip_test
 ```
 
-### 6. Render Global Mask IDs
+#### 6. Render Global Mask IDs
 
 ```bash
 CUDA_VISIBLE_DEVICES=${GPU} python render/object_editing.py \
@@ -128,7 +128,7 @@ CUDA_VISIBLE_DEVICES=${GPU} python render/object_editing.py \
     --mode visualize
 ```
 
-### 7. Render PCA Feature Field
+#### 7. Render PCA Feature Field
 
 ```bash
 CUDA_VISIBLE_DEVICES=${GPU} python render/features.py \
@@ -142,7 +142,7 @@ CUDA_VISIBLE_DEVICES=${GPU} python render/features.py \
     --skip_test
 ```
 
-### 8. Export Feature Viewer Model
+#### 8. Export Feature Viewer Model
 
 ```bash
 python script/export_feature_viewer_model.py \
