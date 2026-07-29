@@ -164,3 +164,7 @@ python script/export_feature_viewer_model.py \
 This codebase builds on [GaussianGrouping](https://github.com/lkeab/gaussian-grouping), [DINOv2](https://github.com/facebookresearch/dinov2), [DepthAnythingv2](https://github.com/DepthAnything/Depth-Anything-V2).
 
 We thanks for authors for releasing their codes.
+
+## LICENSE
+This repository is released under the MIT License ([LICENSE](https://github.com/hjpark83/Consistent-Scene-Understanding-in-3DGS-via-MCM/blob/main/LICENSE)).
+
