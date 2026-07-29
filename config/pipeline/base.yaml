@@ -1,0 +1,100 @@
+# Base pipeline + training hyperparameters.
+# Scene configs (figurines.yaml, dog.yaml, ...) are deep-merged on top of this
+
+runtime:
+  gpu: 1
+  iterations: 30000
+  sam_checkpoint: sam_vit_h_4b8939.pth
+  depth_device: cuda
+  resolution:
+  max_init_points: 150000
+
+# Stage toggles. force_train / rebuild_feature_field / force_feature_field are
+# not config keys — pass them as env vars when needed, e.g. FORCE_TRAIN=1 bash ...
+stages:
+  feature_field: true
+  assign_mask_ids: true
+
+# MCM feature-field segmentation (consumed via env vars by run_feature_field_segmentation.py)
+mcm:
+  feature_weight: 0.5
+  depth_weight: 0.2
+  edge_penalty: 0.2
+  depth_boundary_weight: 0.1
+  depth_diff_threshold: 0.20
+  depth_affinity_sigma2: 0.05
+  merge_score_threshold: 0.80
+  max_merge_iterations: 1000
+  containment_ratio_threshold: 0.85
+  containment_feature_threshold: 0.55
+
+# Cross-view mask matching (read by both the pipeline loader and train.py)
+cross_view:
+  threshold: 0.7
+  max_view_gap: 10
+  topk_per_mask: 3
+  same_view_matching_threshold: -1.0
+  use_improved_matching: true
+  use_multiview_refinement: false
+  min_consensus_views: 2
+  filter_mask_ids_by_reliability: false
+  one_to_one: true
+  use_geometry_matching: true
+  prevent_view_conflicts: true
+
+# 3D mask-ID lifting (consumed via env vars by assign_mask_ids_to_point_cloud.py)
+lifting:
+  zbuffer_abs_tolerance: 0.02
+  zbuffer_rel_tolerance: 0.03
+
+# 3DGS training hyperparameters (read by train.py via load_training_config()).
+# Keys map to argparse attributes in arguments/__init__.py.
+gaussian:
+  # Densification schedule
+  densify_from_iter: 500
+  densify_until_iter: 15000
+  densification_interval: 100
+  densify_grad_threshold: 0.0002
+  opacity_reset_interval: 3000
+  percent_dense: 0.01
+  # Learning rates
+  position_lr_init: 0.00016
+  position_lr_final: 0.0000016
+  position_lr_delay_mult: 0.01
+  position_lr_max_steps: 30000
+  feature_lr: 0.0025
+  opacity_lr: 0.05
+  scaling_lr: 0.005
+  rotation_lr: 0.001
+  # Loss weights
+  lambda_dssim: 0.2
+  lambda_semantic: 1.0
+  lambda_feature_reg: 0.01
+  lambda_normal_reg: 0.05
+  lambda_smoothness_reg: 0.02
+  lambda_opacity_prior: 0.01
+  # 3D KNN regularization
+  reg3d_interval: 5
+  reg3d_k: 5
+  reg3d_lambda: 2.0
+  reg3d_max_points: 100000
+  reg3d_sample_size: 1000
+  # Normal / smoothness regularization
+  normal_reg_interval: 500
+  normal_reg_knn: 10
+  smoothness_reg_interval: 500
+  # Training runtime
+  gradient_accumulation_steps: 1
+  enable_mixed_precision: false
+  checkpoint_interval_auto_save: 5000
+  # Semantic / feature field
+  num_classes: 256
+  feature_field_variance: 0.05
+  feature_field_variance_alpha: 2.0
+  feature_field_min_views: 2
+  # Geometry-aware matching
+  geometry_sample_points: 120000
+  geometry_max_points_per_mask: 2048
+  geometry_weight: 0.35
+  geometry_threshold: 0.05
+  geometry_semantic_floor: 0.60

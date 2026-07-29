@@ -1,0 +1,41 @@
+{
+    "_comment": "Optimized config for LERF Figurines dataset",
+    "_characteristics": {
+        "scene_type": "small_tabletop",
+        "initial_points": "~50k",
+        "complexity": "low",
+        "memory_concerns": "none - fits comfortably"
+    },
+
+    "densify_until_iter": 15000,
+    "_densify_comment": "Longer densification (15k) - small scene benefits from more refinement",
+
+    "densify_grad_threshold": 0.0002,
+    "_densify_grad_comment": "Default threshold - good for small scenes",
+
+    "num_classes": 256,
+
+    "reg3d_interval": 5,
+    "_reg3d_interval_comment": "More frequent regularization - small scene can afford it",
+
+    "reg3d_k": 5,
+    "_reg3d_k_comment": "Default k=5 neighbors",
+
+    "reg3d_lambda_val": 2.0,
+    "_reg3d_lambda_comment": "Strong regularization - helps with small object boundaries",
+
+    "reg3d_max_points": 50000,
+    "_reg3d_max_comment": "All points (50k) - small enough to process everything",
+
+    "reg3d_sample_size": 1000,
+    "_reg3d_sample_comment": "Default batch size",
+
+    "opacity_reset_interval": 3000,
+    "_opacity_reset_comment": "Default - frequent resets help clean up small scenes",
+
+    "percent_dense": 0.01,
+    "_percent_dense_comment": "Default density target",
+
+    "densification_interval": 100,
+    "_densification_comment": "Default - frequent densification for detail"
+}
