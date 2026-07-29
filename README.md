@@ -162,7 +162,7 @@ python script/export_feature_viewer_model.py \
 ```
 
 ## Acknowledgement
-This codebase builds on [GaussianGrouping](https://github.com/lkeab/gaussian-grouping), [DINOv2](https://github.com/facebookresearch/dinov2), [DepthAnythingv2](https://github.com/DepthAnything/Depth-Anything-V2).
+This codebase builds on [GaussianGrouping](https://github.com/lkeab/gaussian-grouping), [SAM](https://github.com/facebookresearch/segment-anything), [DINOv2](https://github.com/facebookresearch/dinov2), [DepthAnythingv2](https://github.com/DepthAnything/Depth-Anything-V2).
 
 We thanks for authors for releasing their codes.
 
