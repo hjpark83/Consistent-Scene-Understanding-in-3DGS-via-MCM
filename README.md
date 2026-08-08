@@ -2,7 +2,7 @@
 
 > **Hyunjoon Park**, and Donghyeon Cho
 
-### [Project Page](https://hjpark83.github.io/consisGS.github.io/) | [Paper](https://arxiv.org/abs/2607.01708)
+### [Project Page](https://hjpark83.github.io/consisGS.github.io/) | [arXiv](https://arxiv.org/abs/2607.01708) | [Paper](https://link.springer.com/chapter/10.1007/978-3-032-31441-3_41#citeas)
 
 Official repository for our ICPR 2026 paper on Consistent Scene Understanding in reconstructed 3D space using Gaussian Splatting and 2D Segmentation Model.
 
@@ -159,6 +159,9 @@ python script/export_feature_viewer_model.py \
 ## 📚 Citation
 
 ```bibtex
+Park, H., Cho, D. (2027). Consistent Scene Understanding in 3D Gaussian Splatting via Multi-cue Mask Refinement.
+In: De Marsico, M., et al. Pattern Recognition. ICPR 2026.
+Lecture Notes in Computer Science, vol 16820. Springer, Cham. https://doi.org/10.1007/978-3-032-31441-3_41
 ```
 
 ## Acknowledgement
