@@ -159,9 +159,13 @@ python script/export_feature_viewer_model.py \
 ## 📚 Citation
 
 ```bibtex
-Park, H., Cho, D. (2027). Consistent Scene Understanding in 3D Gaussian Splatting via Multi-cue Mask Refinement.
-In: De Marsico, M., et al. Pattern Recognition. ICPR 2026.
-Lecture Notes in Computer Science, vol 16820. Springer, Cham. https://doi.org/10.1007/978-3-032-31441-3_41
+@inproceedings{park2026consistent,
+        title={Consistent Scene Understanding in 3D Gaussian Splatting via Multi-Cue Mask Refinement},
+        author={Park, Hyunjoon and Cho, Donghyeon},
+        booktitle={International Conference on Pattern Recognition (ICPR)},
+        year={2026},
+        url={https://hjpark83.github.io/consisGS.github.io/}
+      }
 ```
 
 ## Acknowledgement
