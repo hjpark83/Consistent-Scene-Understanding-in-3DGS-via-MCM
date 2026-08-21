@@ -1,4 +1,4 @@
-# Consistent Scene Understanding in 3D Gaussian Splatting via Multi Cue Mask Refinement (ICPR 2026)
+# Consistent Scene Understanding in 3D Gaussian Splatting via Multi-Cue Mask Refinement (ICPR 2026)
 
 > **Hyunjoon Park**, and Donghyeon Cho
 
